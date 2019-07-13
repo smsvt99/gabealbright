@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const jsonParser = bodyParser.json()
 
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'build')));
 
