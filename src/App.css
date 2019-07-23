@@ -12,7 +12,7 @@ h1{
   transition: all .2s;
 }
 .grower:hover{
-  transform: scale(1.1);
+  transform: scale(1.1); 
 }
 .red{
   /* color: red */
@@ -31,4 +31,53 @@ a{
   border: 1px solid black !important;
   border-radius: 20px;
   background-color: aliceblue
+}
+.title{
+  display: block;
+  margin: auto;
+  width: 40%;
+  min-width: 400px;
+}
+
+.cloud{
+  animation: bounce 4s infinite linear;
+}
+.cloud2{
+  animation: bounce2 2.5s infinite linear;
+  text-align: right;
+  margin: 0px 30px;
+}
+.cloud3{
+  animation: bounce3 3s infinite linear;
+  text-align: right;
+  margin: 10px 120px;
+}
+.cloud4{
+  animation: bounce4 3.5s infinite linear;
+  text-align: right;
+  margin: 0px 10px;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-5px)  }
+  50% { transform: translateY(5px) }
+  100% { transform: translateY(-5px) }
+}
+
+@keyframes bounce2 {
+  0% { transform: translateY(2px)  }
+  50% { transform: translateY(-3px) }
+  100% { transform: translateY(2px) }
+}
+
+@keyframes bounce3 {
+  0% { transform: translateY(2px)  }
+  50% { transform: translateY(-9px) }
+  100% { transform: translateY(2px) }
+}
+
+@keyframes bounce4 {
+  0% { transform: translateY(5px)  }
+  50% { transform: translateY(-5px) }
+  100% { transform: translateY(5px) }
 }

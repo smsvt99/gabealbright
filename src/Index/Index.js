@@ -1,56 +1,92 @@
 import React from 'react';
+import gabe_albright from '../graphics/gabe_albright.svg'
+import about from '../graphics/about.svg'
+import contact from '../graphics/contact.svg'
+import portfolio from '../graphics/portfolio.svg'
+import king_kong from '../graphics/king_kong.svg'
 import { Link } from 'react-router-dom';
 
 const Index = (props) => {
-    const indexOptionsStyle = {
-        marginRight: "100px",
-        float: 'right'
-    }
+    // const indexOptionsStyle = {
+    //     marginRight: "100px",
+    //     float: 'right'
+    // }
 
-    const loginStyle = {
-        marginRight: '100px',
+    const option = {
+        width: '14%',
+        minWidth: '200px',
+    }
+    const background = {
         position: 'absolute',
-        right: '20px',
-        top: '10px'
+        top: '20px',
+        width: '100%',
+        height: '90%',
+        background: `url(${king_kong}) no-repeat center center`,
+        backgroundSize: 'contain',
+        // backgroundRepeat: 'no-repeat',
+        // backgroundPosition: 'center'
+    }
+    const title = {
+        display: 'block',
+        margin: 'auto',
+        width: '28%',
+        minWidth: '450px'
+    }
+    const buttons = {
+        marginRight: '24%',
+        marginTop: '3%'
     }
 
-    const optionStyle = {
-        textAlign: 'right',
-    }
-
-        return (<div>
-            <h1>GABE ALBRIGHT</h1>
-            <ul style={indexOptionsStyle}>
-                
-                <Link to="/about" style = {{}}>
-                    <h2
-                        style={optionStyle}
-                        className="option grower"
+    return (<div style={background}>
+            <img
+                src={gabe_albright}
+                className="cloud"
+                alt="gabe albright"
+                style={title}
+            ></img>
+        <div style={buttons}>
+            <div className="cloud2">
+                <Link
+                    to="/about"
+                >
+                    <img
+                        style={option}
+                        src={about}
+                        alt="about"
+                        className="grower"
                     >
-                        ABOUT
-                    </h2>
+                    </img>
                 </Link>
+            </div>
 
-                <Link to = "/portfolio">
-                    <h2 
-                        style={optionStyle} 
-                        className="option grower" 
+            <div className="cloud3">
+                <Link to="/portfolio">
+                    <img
+                        src={portfolio}
+                        alt="about"
+                        style={option}
+                        className="grower"
                     >
-                        PORTFOLIO
-                    </h2>
+                    </img>
                 </Link>
+            </div>
 
-                <Link to = "/contact">
-                    <h2 
-                        style={optionStyle}
-                        className="option grower" 
+            <div className="cloud4">
+                <Link to="/contact">
+                    <img
+                        src={contact}
+                        alt="about"
+                        style={option}
+                        className="grower"
                     >
-                        CONTACT
-                    </h2>
+                    </img>
                 </Link>
-            </ul>
+                {/* </div>
+        </div> */}
+            </div>
         </div>
-        )
+    </div>
+    )
 }
 
 export default Index;
