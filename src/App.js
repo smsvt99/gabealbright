@@ -11,7 +11,6 @@ import TopNav from './TopNav/TopNav';
 
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { promised } from 'q';
 
 
 class App extends Component {

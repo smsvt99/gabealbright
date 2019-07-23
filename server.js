@@ -9,9 +9,13 @@ const jwt = require('jsonwebtoken');
 
 const jsonParser = bodyParser.json()
 
-const config = require('./config');
+try{
+  const config = require('./config');
+} catch (err) {
+  const config = {};
+}
 
-const uri = process.env.mogoUri || config.mongoUri;
+const uri = process.env.mongoUri || config.mongoUri;
 const secret = process.env.hashSecret || config.hashSecret;
 
 const DbHelper = require('./DbHelper')
