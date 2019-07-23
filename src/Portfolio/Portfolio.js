@@ -28,6 +28,9 @@ class Portfolio extends Component {
 
     setBigPreviewSource = (e) => {
         let realTarget = e.target.parentElement.lastChild
+        if(!realTarget.src) {
+            realTarget = e.target.lastChild
+        }
         console.log(realTarget)
         this.setState({
             bigPreviewSource : realTarget.src,
