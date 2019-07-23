@@ -12,9 +12,23 @@ h1{
   transition: all .2s;
 }
 .grower:hover{
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 .red{
   /* color: red */
-  transform: scale(1.1)
+  transform: scale(1.1);
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+.thickener{
+  transition: all .2s;
+}
+
+.thickener:hover{
+  border: 1px solid black !important;
+  border-radius: 20px;
+  background-color: aliceblue
 }

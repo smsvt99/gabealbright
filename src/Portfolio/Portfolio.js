@@ -3,14 +3,16 @@ import Contents from './Contents';
 import SideBar from "./SideBar";
 import BigPreview from "./BigPreview";
 
-const paintings = require('./media/paintings.json');
+// const paintings = require('./media/paintings.json');
 
 class Portfolio extends Component {
     state = {
-        content: paintings,
+        // content: paintings,
         current: "painting",
         bigPreviewSource : "",
-        showBigPreview : false
+        bigPreviewDescription : "",
+        showBigPreview : false,
+        content : []
     }
 
     rowStyle = {
@@ -25,12 +27,12 @@ class Portfolio extends Component {
     }
 
     setBigPreviewSource = (e) => {
+        let realTarget = e.target.parentElement.lastChild
+        console.log(realTarget)
         this.setState({
-            bigPreviewSource : e.target.src,
+            bigPreviewSource : realTarget.src,
+            bigPreviewDescription : realTarget.alt,
             showBigPreview : true
-        }, ()=>{
-            document.getElementById('bigPreview').addEventListener('click', this.hideBigPreview)
-            console.log(this.state.bigPreviewSource)
         })
     }
 
@@ -41,15 +43,14 @@ class Portfolio extends Component {
     }
 
     render() {
-        if(this.props.view === "portfolio")
-        {
             return (
                 <div>
-                    <h1>PORTFOLIO</h1>
+                    <h1>Portfolio</h1>
                     <BigPreview
                         bigPreviewSource = {this.state.bigPreviewSource}
+                        bigPreviewDescription = {this.state.bigPreviewDescription}
                         showBigPreview = {this.state.showBigPreview}
-                        hidBigPreview = {this.state.hideBigPreview}
+                        hideBigPreview = {this.hideBigPreview}
                     />
                     <div style={this.rowStyle}>
                         <SideBar
@@ -57,23 +58,14 @@ class Portfolio extends Component {
                             setCurrent={this.setCurrent}
                         />
                         <Contents
-                            content={this.state.content}
+                            media={this.props.media}
                             current={this.state.current}
                             setBigPreviewSource={this.setBigPreviewSource}
                         />
                     </div>
-                    <p 
-                        style = {this.props.backButtonStyle}
-                        onClick = {() => this.props.setView("index")}
-                    >Back</p>
                 </div>
             )
         }
-        else
-        {
-            return null;
-        }
-    }
 }
 
 export default Portfolio;

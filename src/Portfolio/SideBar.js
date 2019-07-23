@@ -13,7 +13,8 @@ const SideBar = (props) => {
         cursor: "pointer"
     };
 
-    const categories = ["Painting", "Illustration" ,"Audio" ,"Video" ,"Sculpture" ,"Fabric" ,"Carpentry" ,"Stone" ,"Photo"];
+    const categories = ["Painting", "Illustration", "Carpentry", "Sculpture", "Video", "Other"];
+
 
     const htmlArray = categories.map(title => {
         return(<h2

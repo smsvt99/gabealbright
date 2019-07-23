@@ -13,7 +13,7 @@ class Contact extends Component {
         width: "300px",
         margin: 'auto'
     }
-    inputStyle = {
+    inputStyle = { 
         marginBottom: "20px"
     }
     submit = (e) => {
@@ -39,7 +39,6 @@ class Contact extends Component {
     }
 
     render() {
-        if (this.props.view === 'contact') {
             return (
                 <div>
                     <h1>Contact</h1>
@@ -75,18 +74,8 @@ class Contact extends Component {
                             </textarea>
                         <button onClick={this.submit} type="submit">Submit</button>
                     </form>
-                    <p
-                        style={this.props.backButtonStyle}
-                        onClick={() => this.props.setView("index")}
-                    >Back</p>
                 </div>);
         }
-        else {
-            return null;
-        }
-    }
-
-
 }
 
 export default Contact;

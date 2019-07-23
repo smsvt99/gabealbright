@@ -19,16 +19,29 @@ const Contents = (props) => {
         cursor: 'pointer',
     }
     const pStyle = {
-        textAlign: "center"
+        textAlign: "center",
+        marginTop: '-10px',
+        marginBottom: '10px'
     }
-    const htmlArray = props.content.map(obj => {
+
+    const media = props.media.filter((item)=>{
+        return item.category === props.current
+    })
+
+    const htmlArray = media.map(obj => {
         return (
             <div style={wrapperStyle}
                 className = "grower"
+                onClick = {props.setBigPreviewSource}
             >
                 <h2>{obj.title}</h2>
-                <img style = {imgStyle} src={obj.url} onClick = {props.setBigPreviewSource}></img>
-                <p style={pStyle}>{obj.description}</p>
+                <p style={pStyle}>{obj.year}</p>
+                <img 
+                    style = {imgStyle}
+                    src={obj.url}
+                    alt = {obj.description}
+                    >
+                </img>
             </div>
         )
     })
