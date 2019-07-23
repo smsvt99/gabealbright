@@ -9,10 +9,11 @@ const jwt = require('jsonwebtoken');
 
 const jsonParser = bodyParser.json()
 
+let config;
 try{
-  const config = require('./config');
-} catch (err) {
-  const config = {};
+  config = require('./config');
+} catch(err) {
+  config = {};
 }
 
 const uri = process.env.mongoUri || config.mongoUri;
@@ -31,6 +32,23 @@ app.use(cookieParser(secret))
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
+app.get('/portfolio', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
+
+
 app.post('/sendMail', jsonParser, (req, res) => {
   console.log(req.body)
 
