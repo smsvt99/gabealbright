@@ -11,8 +11,9 @@ const TopNav = (props) => {
 
       const listStyle = {
           display: 'flex',
+          justifyContent: 'flex-end',
           padding: 0,
-          margin: 0
+          margin: 0,
       }
     
     let text;

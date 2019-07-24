@@ -55,7 +55,10 @@ class App extends Component {
             loggedIn={this.state.loggedIn}
             backButtonStyle={this.backButtonStyle}
           />
-
+          <div style={{paddingBottom:'20px', paddingTop: '2px'}}>
+            <h1 style={{padding: 0, margin: 0, fontSize: '45px'}}>Gabe Albright</h1>
+            <p style={{padding: 0, margin: 0,textAlign: 'center'}}>Artist for Hire</p>
+          </div>
           <Route
             path = "/"
             exact

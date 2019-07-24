@@ -20,7 +20,7 @@ class Portfolio extends Component {
         width: "100%"
     }
 
-    setCurrent = (e) => {
+    setCurrent = (e) => { 
         this.setState({
             current : e.target.innerHTML.toLowerCase()
         })
@@ -48,7 +48,7 @@ class Portfolio extends Component {
     render() {
             return (
                 <div>
-                    <h1>Portfolio</h1>
+                    <h1 className = "header">Portfolio</h1>
                     <BigPreview
                         bigPreviewSource = {this.state.bigPreviewSource}
                         bigPreviewDescription = {this.state.bigPreviewDescription}

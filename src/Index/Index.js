@@ -34,16 +34,16 @@ const Index = (props) => {
     }
     const buttons = {
         marginRight: '24%',
-        marginTop: '3%'
+        marginTop: '13%'
     }
 
     return (<div style={background}>
-            <img
+            {/* <img
                 src={gabe_albright}
                 className="cloud"
                 alt="gabe albright"
                 style={title}
-            ></img>
+            ></img> */}
         <div style={buttons}>
             <div className="cloud2">
                 <Link

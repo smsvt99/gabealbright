@@ -64,26 +64,28 @@ class Login extends Component {
             return <Redirect to="/admin" />
         } else {
             return (
-                <div>
-                    <h1>Log in</h1>
-                    <div style={this.wrapperStyle}>
-                        {this.redirector}
-                        <p style={{ color: 'red' }}>{this.state.serverDialogue}</p>
-                        <p>Username</p>
-                        <input
-                            value={this.state.username}
-                            onChange={(e) => { this.controlChanges(e, 'username') }}
-                            name="username"
-                            type="text">
-                        </input>
+                <div style={{textAlign: 'center'}}>
+                    <div style={{border: '1px solid grey', display: 'inline-block', padding: '25px', borderRadius: '10px'}}>
+                        <h1>Log in</h1>
+                        <div style={this.wrapperStyle}>
+                            {this.redirector}
+                            <p style={{ color: 'red' }}>{this.state.serverDialogue}</p>
+                            <p>Username</p>
+                            <input
+                                value={this.state.username}
+                                onChange={(e) => { this.controlChanges(e, 'username') }}
+                                name="username"
+                                type="text">
+                            </input>
 
-                        <p>Password</p>
-                        <input
-                            value={this.state.password}
-                            onChange={(e) => { this.controlChanges(e, 'password') }}
-                            name="password"
-                            type="password"></input>
-                        <p><button onClick={this.submit}>Login</button></p>
+                            <p>Password</p>
+                            <input
+                                value={this.state.password}
+                                onChange={(e) => { this.controlChanges(e, 'password') }}
+                                name="password"
+                                type="password"></input>
+                            <p><button onClick={this.submit}>Login</button></p>
+                        </div>
                     </div>
                 </div>
             )

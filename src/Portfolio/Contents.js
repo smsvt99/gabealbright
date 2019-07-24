@@ -4,11 +4,14 @@ const Contents = (props) => {
     const rowStyle = {
         display: "flex",
         flexWrap: 'wrap',
-        width: "100%"
+        width: "100%",
+        margin: "0px 20px",
+        // border: "1px solid grey"
     }
     const imgStyle = {
         width : "150px",
-        margin: "auto"
+        margin: "auto",
+        borderRadius: '7px'
     }
     const wrapperStyle = {
         display: "flex",
@@ -18,6 +21,7 @@ const Contents = (props) => {
         width: "200px",
         cursor: 'pointer',
     }
+
     const pStyle = {
         textAlign: "center",
         marginTop: '-10px',
@@ -34,7 +38,7 @@ const Contents = (props) => {
                 className = "grower"
                 onClick = {props.setBigPreviewSource}
             >
-                <h2>{obj.title}</h2>
+                <h2 style={{fontSize: '16px', textAlign: 'center'}}>{obj.title}</h2>
                 <p style={pStyle}>{obj.year}</p>
                 <img 
                     style = {imgStyle}
