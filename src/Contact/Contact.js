@@ -11,7 +11,11 @@ class Contact extends Component {
         display: 'flex',
         flexDirection: 'column',
         width: "300px",
-        margin: 'auto'
+        margin: 'auto',
+        backgroundColor: 'white',
+        padding: '30px',
+        border: '1px solid grey',
+        borderRadius: '10px'
     }
     inputStyle = { 
         marginBottom: "20px"
@@ -41,8 +45,8 @@ class Contact extends Component {
     render() {
             return (
                 <div>
-                    <h1>Contact</h1>
                     <form style={this.formStyle}>
+                    <h1>Email Gabe</h1>
                         <label for="name">Name</label>
                         <input 
                             style={this.inputStyle} 

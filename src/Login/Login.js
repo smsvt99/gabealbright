@@ -12,7 +12,7 @@ class Login extends Component {
         display: 'flex',
         flexDirection: 'column',
         width: "300px",
-        margin: 'auto'
+        margin: 'auto',
     }
     controlChanges = (e, field) => {
         this.setState({
@@ -65,7 +65,7 @@ class Login extends Component {
         } else {
             return (
                 <div style={{textAlign: 'center'}}>
-                    <div style={{border: '1px solid grey', display: 'inline-block', padding: '25px', borderRadius: '10px'}}>
+                    <div style={{background: 'white', border: '1px solid grey', display: 'inline-block', padding: '25px', margin: '25px', borderRadius: '10px'}}>
                         <h1>Log in</h1>
                         <div style={this.wrapperStyle}>
                             {this.redirector}

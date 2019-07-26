@@ -13,18 +13,16 @@ const Index = (props) => {
     // }
 
     const option = {
-        width: '14%',
-        minWidth: '200px',
+        width: '12%',
+        minWidth: '150px',
     }
     const background = {
-        position: 'absolute',
-        top: '20px',
-        width: '100%',
-        height: '90%',
+        position: 'relative',
+        minWidth: '100%',
+        minHeight: '100%',
         background: `url(${king_kong}) no-repeat center center`,
         backgroundSize: 'contain',
-        // backgroundRepeat: 'no-repeat',
-        // backgroundPosition: 'center'
+        // transform: 'scale(1.5)'
     }
     const title = {
         display: 'block',
@@ -33,8 +31,8 @@ const Index = (props) => {
         minWidth: '450px'
     }
     const buttons = {
-        marginRight: '24%',
-        marginTop: '13%'
+        paddingRight: '30%',
+        // marginTop: '13%'
     }
 
     return (<div style={background}>

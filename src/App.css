@@ -1,8 +1,24 @@
+html{
+  height: 100%;
+  background: url('http://www.mauriciotravels.com/wp-content/uploads/2014/02/rainforest1.jpg');
+  /* background: darkslategray; */
+  background-size: stretch;
+  background-attachment: fixed;
+  margin-top: 10px
+}
 body{
-  font-family: 'Raleway', sans-serif;
+  min-height: 100%;
+  font-family: 'Josefin Slab', serif;
+  /* font-family: 'Raleway', sans-serif; */
   /* color: rgb(45,45,65); */
   padding: 10px 30px;
   /* color: darkslategrey; */
+  /* background: url('./graphics/notebook.png'); */
+  background: url('./graphics/paper.png');
+  background-repeat: repeat-y;
+  background-size: 92%;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1{
@@ -50,6 +66,7 @@ a{
 .header{
   border: 1px solid grey;
   border-radius: 10px;
+  background-color: white;
 }
 
 .cloud{

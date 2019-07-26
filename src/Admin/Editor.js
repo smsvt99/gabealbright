@@ -107,7 +107,8 @@ class Editor extends Component {
                     <option value='illustration'>Illustration</option>
                     <option value='carpentry'>Carpentry</option>
                     <option value='sculpture'>Sculpture</option>
-                    <option value='video'>Video</option>
+                    <option value='photography'>Other</option>
+                    {/* <option value='video'>Video</option> */}
                     <option value='other'>Other</option>
                 </select>
                 <p>Title</p>

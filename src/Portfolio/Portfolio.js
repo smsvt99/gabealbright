@@ -40,7 +40,7 @@ class Portfolio extends Component {
     }
 
     hideBigPreview = () => {
-        this.setState({
+        this.setState({ 
             showBigPreview : false
         })
     }
@@ -48,7 +48,7 @@ class Portfolio extends Component {
     render() {
             return (
                 <div>
-                    <h1 className = "header">Portfolio</h1>
+                    {/* <h1 className = "header">Portfolio</h1> */}
                     <BigPreview
                         bigPreviewSource = {this.state.bigPreviewSource}
                         bigPreviewDescription = {this.state.bigPreviewDescription}
