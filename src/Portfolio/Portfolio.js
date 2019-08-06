@@ -31,12 +31,19 @@ class Portfolio extends Component {
         if(!realTarget.src) {
             realTarget = e.target.lastChild
         }
-        console.log(realTarget)
-        this.setState({
-            bigPreviewSource : realTarget.src,
-            bigPreviewDescription : realTarget.alt,
-            showBigPreview : true
-        })
+        if(realTarget.alt){
+            this.setState({
+                bigPreviewSource : realTarget.src,
+                bigPreviewDescription : realTarget.alt,
+                showBigPreview : true
+            })
+        } else {
+            this.setState({
+                bigPreviewSource : realTarget.src,
+                bigPreviewDescription : realTarget.name,
+                showBigPreview : true
+            })
+        }
     }
 
     hideBigPreview = () => {
@@ -54,6 +61,7 @@ class Portfolio extends Component {
                         bigPreviewDescription = {this.state.bigPreviewDescription}
                         showBigPreview = {this.state.showBigPreview}
                         hideBigPreview = {this.hideBigPreview}
+                        current={this.state.current}
                     />
                     <div style={this.rowStyle}>
                         <SideBar

@@ -30,7 +30,8 @@ class Edit extends Component{
         justifyContent: 'space-between',
         alignItems: 'center',
         cursor: 'pointer',
-        borderRadius: '20px'
+        borderRadius: '20px',
+        backgroundColor: 'white'
     }
     
 

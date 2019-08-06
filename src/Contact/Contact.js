@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import mailbox_pre from '../graphics/mailbox_pre.png';
+import mailbox_post from '../graphics/mailbox_post.png';
+import match from '../audio/match.wav'
+
 
 class Contact extends Component {
 
@@ -11,15 +15,23 @@ class Contact extends Component {
         display: 'flex',
         flexDirection: 'column',
         width: "300px",
-        margin: 'auto',
         backgroundColor: 'white',
         padding: '30px',
         border: '1px solid grey',
         borderRadius: '10px'
     }
-    inputStyle = { 
+    inputStyle = {
         marginBottom: "20px"
     }
+    imgStyle = {
+        height: '350px',
+    }
+    rowStyle = {
+        display: 'flex',
+        justifyContent: "center",
+        marginTop: "50px"
+    }
+
     submit = (e) => {
         e.preventDefault();
         const options = {
@@ -43,43 +55,64 @@ class Contact extends Component {
     }
 
     render() {
-            return (
-                <div>
+        return (
+            <div>
+                <div style={this.rowStyle}>
                     <form style={this.formStyle}>
-                    <h1>Email Gabe</h1>
+                        <h1>Email Gabe</h1>
                         <label for="name">Name</label>
-                        <input 
-                            style={this.inputStyle} 
-                            name="name"  
+                        <input
+                            style={this.inputStyle}
+                            name="name"
                             type="text"
-                            onChange={(e)=>{this.controlChanges("name", e)}}
+                            onChange={(e) => { this.controlChanges("name", e) }}
                             value={this.state.name}
-                            >
+                        >
                         </input>
                         <label for="email">Email</label>
                         <input
-                             style={this.inputStyle}
-                             type="email" 
-                             name="email"
-                             onChange={(e)=>{this.controlChanges("email", e)}}
-                             value={this.state.email}
-                             >
+                            style={this.inputStyle}
+                            type="email"
+                            name="email"
+                            onChange={(e) => { this.controlChanges("email", e) }}
+                            value={this.state.email}
+                        >
 
-                             </input>
+                        </input>
                         <label for="message">Message</label>
                         <textarea
                             style={this.inputStyle}
                             name="message"
                             rows="4"
                             cols="50"
-                            onChange={(e)=>{this.controlChanges("message", e)}}
+                            onChange={(e) => { this.controlChanges("message", e) }}
                             value={this.state.message}
-                            >
-                            </textarea>
-                        <button onClick={this.submit} type="submit">Submit</button>
+                        >
+                        </textarea>
+                        <button 
+                            onClick={(e)=>{
+                                this.submit(e); 
+                                document.getElementById('mailbox').src = mailbox_post;
+                                let sound = new Audio(match);
+                                sound.play();
+                                setTimeout(()=>{
+                                    window.location.href="/"
+                                }, 1500)
+                            }}
+                            type="submit"
+                            style = {{cursor: 'pointer'}}
+                        >
+                            Submit
+                        </button>
                     </form>
-                </div>);
-        }
+                    <img
+                        src={mailbox_pre}
+                        style={this.imgStyle}
+                        id="mailbox"
+                    />
+                </div>
+            </div>);
+    }
 }
 
 export default Contact;

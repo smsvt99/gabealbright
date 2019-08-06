@@ -27,7 +27,7 @@ const SideBar = (props) => {
 
     };
 
-    const categories = ["Painting", "Illustration", "Carpentry", "Sculpture", "Photography", "Other"];
+    const categories = ["Painting", "Illustration", "Carpentry", "Sculpture", "Photography", "Video", "Other"];
 
 
     const htmlArray = categories.map(title => {

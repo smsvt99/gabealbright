@@ -138,7 +138,7 @@ class Editor extends Component {
                         this.submit(this.props.target)
                     }}
                     style={{ marginBottom: '50px', borderColor: 'black', color: 'white', backgroundColor: 'black', cursor: 'pointer' }}
-                >Upload!</button>
+                >Submit Changes!</button>
             </div>
         )
     }

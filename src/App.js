@@ -26,8 +26,8 @@ class App extends Component {
     })
   }
 
-  componentDidMount = () => {
-    this.refreshContent();
+  componentDidMount = async () => {
+    let items = await this.refreshContent();
   }
 
   refreshContent = () => {

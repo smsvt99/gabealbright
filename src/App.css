@@ -1,6 +1,7 @@
 html{
   height: 100%;
-  background: url('http://www.mauriciotravels.com/wp-content/uploads/2014/02/rainforest1.jpg');
+  /* background: url('http://www.mauriciotravels.com/wp-content/uploads/2014/02/rainforest1.jpg'); */
+  background: url('./graphics/desk.jpg');
   /* background: darkslategray; */
   background-size: stretch;
   background-attachment: fixed;
@@ -54,7 +55,7 @@ a{
 .thickener:hover{
   border: 1px solid black !important;
   border-radius: 20px;
-  background-color: aliceblue
+  background-color: aliceblue !important;
 }
 .title{
   display: block;
@@ -69,7 +70,7 @@ a{
   background-color: white;
 }
 
-.cloud{
+/* .cloud{
   animation: bounce 4s infinite linear;
 }
 .cloud2{
@@ -110,4 +111,4 @@ a{
   0% { transform: translateY(5px)  }
   50% { transform: translateY(-5px) }
   100% { transform: translateY(5px) }
-}
+} */

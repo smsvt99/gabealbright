@@ -11,7 +11,9 @@ const Contents = (props) => {
     const imgStyle = {
         width : "150px",
         margin: "auto",
-        borderRadius: '7px'
+        borderRadius: '7px',
+        border: 'none',
+        pointerEvents: 'none'
     }
     const wrapperStyle = {
         display: "flex",
@@ -40,12 +42,20 @@ const Contents = (props) => {
             >
                 <h2 style={{fontSize: '16px', textAlign: 'center'}}>{obj.title}</h2>
                 <p style={pStyle}>{obj.year}</p>
+                {props.current !== 'video' ?
                 <img 
                     style = {imgStyle}
                     src={obj.url}
                     alt = {obj.description}
                     >
                 </img>
+                : 
+                <iframe
+                    style = {imgStyle}
+                    src={obj.url}
+                    name = {obj.description}
+                ></iframe>
+                }
             </div>
         )
     })

@@ -5,6 +5,13 @@ const BigPreview = (props) => {
         height : "90%",
         margin: 'auto'
     }
+    const iframeStyle = {
+        width : "80%",
+        height : "90%",
+        margin: 'auto',
+        border: 'none',
+        backgroundColor: 'black'
+    }
     
     const screenStyle = {
         height: "100%",
@@ -32,6 +39,7 @@ const BigPreview = (props) => {
     let timeout;
 
     function showDescription(){
+        console.log('mouse moved');
         clearTimeout(timeout);
         timeout = setTimeout(hideDescription, 3500);
         document.getElementById('description').style.opacity = '.9';
@@ -44,7 +52,6 @@ const BigPreview = (props) => {
     }
 
     function end(){
-        console.log('end')
         props.hideBigPreview();
         clearTimeout(timeout);
         window.removeEventListener('mousemove', showDescription);
@@ -58,7 +65,20 @@ const BigPreview = (props) => {
     return (
         <div id="bigPreview">
             <div id="screen" style = {screenStyle}>
-                <img style = {imgStyle} src={props.bigPreviewSource}></img>
+                {props.current !== 'video' 
+                ?
+                    <img 
+                        style = {imgStyle} 
+                        src={props.bigPreviewSource}
+                    >
+                    </img>
+                :
+                    <iframe 
+                        style = {iframeStyle} 
+                        src={props.bigPreviewSource}
+                    >
+                    </iframe>
+                }
                 <p id="description" style = {descriptionStyle}>{props.bigPreviewDescription}</p>
             </div>   
         </div>)
