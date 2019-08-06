@@ -55,6 +55,7 @@ const TopNav = (props) => {
             <p
                 style={optionStyle}
                 className="option grower"
+                id="home"
             >Home
             </p>
             </Link>

@@ -27,6 +27,7 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
+    document.getElementById('home').click();
     let items = await this.refreshContent();
   }
 

@@ -55,6 +55,7 @@ const Index = (props) => {
     let fire= new Audio(fireSound);
     let tail = new Audio(tailSound);
 
+    document.getElementById('')
 
 
     return (
