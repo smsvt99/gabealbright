@@ -6,6 +6,7 @@ const SideBar = (props) => {
         display: "flex",
         flexDirection: "column",
         maxWidth: '20%',
+        minWidth: '150px',
         // marginLeft: "10px",
         position: 'sticky',
         top: '40px',

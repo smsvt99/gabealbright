@@ -18,18 +18,35 @@ class Contact extends Component {
         backgroundColor: 'white',
         padding: '30px',
         border: '1px solid grey',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        flexWrap: 'wrap'
     }
     inputStyle = {
         marginBottom: "20px"
     }
     imgStyle = {
         height: '350px',
+        display: 'flex'
     }
     rowStyle = {
         display: 'flex',
         justifyContent: "center",
-        marginTop: "50px"
+        marginTop: "50px",
+        maxWidth: '800px',
+        flexWrap: 'wrap',
+        margin: 'auto'
+    }
+    pStyle = {
+        // margin: '1% 5% 50px 5%',
+        fontSize: '24px',
+        lineHeight: '1.5',
+        padding: '20px',
+        backgroundColor: 'rgba(255,255,255,.8)',
+        borderRadius: '20px',
+        border: '1px solid grey',
+        maxWidth: '800px',
+        margin: 'auto',
+        marginBottom: '35px'
     }
 
     submit = (e) => {
@@ -57,6 +74,8 @@ class Contact extends Component {
     render() {
         return (
             <div>
+                <p style={this.pStyle}>If you'd like to inquire about hiring me, purchasing a piece from the portfolio, just say hi, please use the form below. You can also connect with me on instagram: @gabe.makes.things</p>
+
                 <div style={this.rowStyle}>
                     <form style={this.formStyle}>
                         <h1>Email Gabe</h1>

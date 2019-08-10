@@ -2,8 +2,9 @@ import React from 'react'
 
 const BigPreview = (props) => {
     const imgStyle = {
-        height : "90%",
-        margin: 'auto'
+        maxHeight : "90%",
+        margin: 'auto',
+        maxWidth : '90%'
     }
     const iframeStyle = {
         width : "80%",

@@ -8,6 +8,7 @@ import Contact from './Contact/Contact';
 import Login from './Login/Login';
 import Admin from './Admin/Admin';
 import TopNav from './TopNav/TopNav';
+import Footer from './Footer/Footer';
 
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -110,6 +111,7 @@ class App extends Component {
               />}
           />
         </div>
+        <Footer/>
       </Router>
     )
   }

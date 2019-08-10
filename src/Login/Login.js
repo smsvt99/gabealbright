@@ -66,7 +66,7 @@ class Login extends Component {
             return (
                 <div style={{textAlign: 'center'}}>
                     <div style={{background: 'white', border: '1px solid grey', display: 'inline-block', padding: '25px', margin: '25px', borderRadius: '10px'}}>
-                        <h1>Log in</h1>
+                        <h1>Welcome</h1>
                         <div style={this.wrapperStyle}>
                             {this.redirector}
                             <p style={{ color: 'red' }}>{this.state.serverDialogue}</p>

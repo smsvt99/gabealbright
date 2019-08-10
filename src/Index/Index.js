@@ -19,36 +19,19 @@ import tailSound from '../audio/smb3_tail.wav'
 import { Link } from 'react-router-dom';
 
 const Index = (props) => {
-    // const indexOptionsStyle = {
-    //     marginRight: "100px",
-    //     float: 'right'
-    // }
 
     const option = {
         width: '35%',
-        minWidth: '350px',
+        minWidth: '250px',
         margin: '0px 10px'
     }
-    // const background = {
-    //     position: 'relative',
-    //     minWidth: '100%',
-    //     minHeight: '100%',
-    //     // background: `url(${king_kong}) no-repeat center center`,
-    //     backgroundSize: 'contain',
-    //     // transform: 'scale(1.5)'
-    // }
-    // const title = {
-    //     display: 'block',
-    //     margin: 'auto',
-    //     width: '28%',
-    //     minWidth: '450px'
-    // }
+
     const buttons = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        margin: '50px 0px'
+        margin: '50px 0px 0px'
     }
 
     let coin = new Audio(coinSound);
@@ -104,7 +87,6 @@ const Index = (props) => {
             <div>
                 <Link to="/contact">
                     <img
-                        // src={contact}
                         id="contact"
                         onMouseOver={()=>{
                             document.getElementById('contact').src = contact_post;
@@ -119,11 +101,9 @@ const Index = (props) => {
                     >
                     </img>
                 </Link>
-                {/* </div>
-        </div> */}
             </div>
         </div>
-    // </div>
+
     )
 }
 
