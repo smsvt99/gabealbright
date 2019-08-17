@@ -37,7 +37,6 @@ const About = (props) => {
                 <img
                     src={pic}
                     style={imgStyle}
-                    className="grower"
                 />
             </div>
             <div>

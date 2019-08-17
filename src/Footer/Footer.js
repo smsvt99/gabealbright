@@ -28,7 +28,7 @@ const Footer = () => {
             />
             <p style={pStyle}>
                 <a 
-                    href="https://www.instagram.com/turkeyboots/"
+                    href="https://www.instagram.com/gabe.makes.things/"
                 >
                     <img
                         src = {instagramIcon}

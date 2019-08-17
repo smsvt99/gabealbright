@@ -74,7 +74,8 @@ class Contact extends Component {
     render() {
         return (
             <div>
-                <p style={this.pStyle}>If you'd like to inquire about hiring me, purchasing a piece from the portfolio, just say hi, please use the form below. You can also connect with me on instagram: @gabe.makes.things</p>
+                <p style={this.pStyle}>If you'd like to inquire about hiring me or purchasing a piece from the portfolio, or you just want to say hi, please use the form below. You can also connect with me on instagram: @gabe.makes.things
+                </p>
 
                 <div style={this.rowStyle}>
                     <form style={this.formStyle}>
