@@ -14,15 +14,18 @@ class Contact extends Component {
     formStyle = {
         display: 'flex',
         flexDirection: 'column',
-        width: "300px",
+        width: "350px",
         backgroundColor: 'white',
         padding: '30px',
         border: '1px solid grey',
         borderRadius: '10px',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
     }
     inputStyle = {
-        marginBottom: "20px"
+        marginBottom: "20px",
+        resize: "none",
+        fontSize: '16px',
+        maxWidth: "100%"
     }
     imgStyle = {
         height: '350px',
@@ -30,7 +33,7 @@ class Contact extends Component {
     }
     rowStyle = {
         display: 'flex',
-        justifyContent: "center",
+        justifyContent: "space-around",
         marginTop: "50px",
         maxWidth: '800px',
         flexWrap: 'wrap',
@@ -120,7 +123,7 @@ class Contact extends Component {
                                 }, 1500)
                             }}
                             type="submit"
-                            style = {{cursor: 'pointer'}}
+                            style = {{cursor: 'pointer', fontSize:'16px'}}
                         >
                             Submit
                         </button>

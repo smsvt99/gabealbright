@@ -45,12 +45,12 @@ class Edit extends Component{
                             onClick = {() => this.edit(item._id)}
                             className = "thickener"
                         >
-                    <p style={{display: 'inline-block'}}>{item.category}</p>
-                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <p style={{display: 'inline-block', width: '10%'}}>{item.category}</p>
+                    <div style={{display: 'flex', flexDirection: 'column', width: '10%'}}>
                         <h3 style={{display: 'inline-block'}} >{item.title}</h3>
                         <p style={{display: 'inline-block'}}>{item.year}</p>
                     </div>
-                    <p style={{display:'inline-block'}}>{item.description}</p>
+                    <p style={{display:'inline-block', width: '40%'}}>{item.description}</p>
                     <img style={{width: '80px', height: '80px', display: 'inline-block'}} src={item.url}/>
                 </div>
             })

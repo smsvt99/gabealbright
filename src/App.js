@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium, {StyleRoot} from 'radium';
 import './App.css';
 
 import Index from './Index/Index';
@@ -38,7 +39,13 @@ class App extends Component {
     .then(res => res.json())
 
     .then(res => {
-      this.setState({
+// experiment
+      res.map(ouvre => {
+        ouvre.image = new Image(150, 150);
+        ouvre.image.src = ouvre.url;
+      })
+//  
+this.setState({
         media: res
       })
     })
@@ -51,6 +58,7 @@ class App extends Component {
 
   render() {
     return (
+      <StyleRoot>
       <Router>
         <div>
           <TopNav
@@ -113,6 +121,7 @@ class App extends Component {
         </div>
         <Footer/>
       </Router>
+      </StyleRoot>
     )
   }
 }

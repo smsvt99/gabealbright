@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
+import Radium from 'radium';
 
 const SideBar = (props) => {
 
     const columnStyle = {
         display: "flex",
         flexDirection: "column",
-        maxWidth: '20%',
-        minWidth: '150px',
-        // marginLeft: "10px",
+        // maxWidth: '20%',
+        maxWidth: '150px',
         position: 'sticky',
         top: '40px',
         alignSelf: 'flex-start',
@@ -16,7 +16,11 @@ const SideBar = (props) => {
         borderRadius: '10px',
         border: '1px solid grey',
         height: '100%',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        '@media(max-width: 400px)' : {
+            padding: 0,
+            textAlign: 'initial'
+        }
     }
     const titleStyle = {
         fontFamily: 'Love Ya Like A Sister, cursive',
@@ -25,7 +29,6 @@ const SideBar = (props) => {
         borderBottom: '1px solid grey',
         fontSize: '25px',
         margin: '10px'
-
     };
 
     const categories = ["Painting", "Illustration", "Carpentry", "Sculpture", "Photography", "Video", "Other"];
@@ -33,6 +36,7 @@ const SideBar = (props) => {
 
     const htmlArray = categories.map(title => {
         return(<div
+                key={title}
                 onClick = {props.setCurrent}
                 style = {titleStyle}
                 className = {props.current === title.toLowerCase() ? "red grower" : "grower"}
@@ -46,4 +50,4 @@ const SideBar = (props) => {
         )
 }
 
-export default SideBar;
+export default Radium(SideBar);

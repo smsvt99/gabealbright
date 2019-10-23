@@ -103,6 +103,7 @@ app.post('/newUser', jsonParser, async (req, res) => {
 });
 
 app.post('/login', jsonParser, async (req, res) => {
+  //there's only one user
   let user = await dbHelper.getUser();
   user = user[0];
 
@@ -111,21 +112,20 @@ app.post('/login', jsonParser, async (req, res) => {
   {
     console.log('login okay')
     var token = jwt.sign({name: req.body.username}, secret);
-    console.log(token)
 
     res
       .header('x-auth-token', token)
       .send()
 
-  // } else {
-  //   res.status(400).send()
+  } else {
+    console.log(`login denied ${req.body.username} : ${req.body.password}`)
+    res.status(401).send()
   }
 })
 
 app.get('/getUser', async(req, res) => {
   let user = await dbHelper.getUser();
   user = user[0];
-  console.log(user)
 })
 
 app.post('/update/:id', jsonParser, async(req, res)=>{
@@ -151,7 +151,7 @@ app.delete('/delete/:id', async (req, res) => {
 function hasValidHeader(req, res){
   const token = req.header('x-auth-token');
   if(!token){
-    console.log('no token')
+    console.log('Header check failed')
     res.status(401).send('Access denied. No token.')
     return false;
   } 
@@ -159,13 +159,12 @@ function hasValidHeader(req, res){
     try
     {
       const payload = jwt.verify(token, secret);
-      console.log('all good')
       return true;
     } 
     catch (err) 
     {
       res.status(400).send('invalid token');
-      console.log('bad token')
+      console.log('Header check failed')
       return false;
     }
   }

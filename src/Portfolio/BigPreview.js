@@ -27,29 +27,31 @@ const BigPreview = (props) => {
     }
     
     const descriptionStyle = {
-        backgroundColor: 'black',
-        opacity: '0',
-        color: 'white',
+        backgroundColor: 'rgba(0,0,0,0)',
+        // opacity: '0',
+        color: 'rgba(255,255,255,0)',
         position: 'absolute',
         top: '0px',
         margin: '0px',
         padding: '10px 30px',
-        transition: 'all .4s'
+        transition: 'all .4s',
+        fontSize: '18px'
     }
 
     let timeout;
 
     function showDescription(){
-        console.log('mouse moved');
+        // console.log('mouse moved');
         clearTimeout(timeout);
         timeout = setTimeout(hideDescription, 3500);
-        document.getElementById('description').style.opacity = '.9';
+        document.getElementById('description').style.backgroundColor = 'rgba(0,0,0, .8)';
+        document.getElementById('description').style.color = 'rgba(255,255,255, 1)';
         window.addEventListener('click', end);
-
     }
 
     function hideDescription(){
-        document.getElementById('description').style.opacity = '0';
+        document.getElementById('description').style.backgroundColor = 'rgba(0,0,0, 0)';
+        document.getElementById('description').style.color = 'rgba(255,255,255, 0)';
     }
 
     function end(){

@@ -15,7 +15,11 @@ body{
   background-size: 92%;
   background-position: center;
   background-attachment: fixed;
-
+}
+@media(max-width: 450px){
+  body{
+    padding: 0;
+  }
 }
 
 h1{

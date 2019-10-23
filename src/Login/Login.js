@@ -47,11 +47,13 @@ class Login extends Component {
             .then(res => {
                 // try{
                 if (res.headers.has('x-auth-token')) {
+                    console.log(res.headers);
                     sessionStorage.setItem('token', res.headers.get('x-auth-token'))
                     this.props.logIn();
                     this.redirect();
                 }
                 else {
+                    console.log(res.headers);
                     this.setState({
                         serverDialogue: "Authentication Failed"
                     })

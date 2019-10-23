@@ -17,7 +17,7 @@ class Portfolio extends Component {
 
     rowStyle = {
         display: 'flex',
-        width: "100%"
+        width: "100%",
     }
 
     setCurrent = (e) => { 

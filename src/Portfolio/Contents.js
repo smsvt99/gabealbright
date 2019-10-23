@@ -1,19 +1,20 @@
 import React from 'react';
+import Radium from 'radium';
 
 const Contents = (props) => {
     const rowStyle = {
         display: "flex",
         flexWrap: 'wrap',
         width: "100%",
-        margin: "0px 20px",
-        // border: "1px solid grey"
+        margin: "0px 20px", 
     }
     const imgStyle = {
-        width : "150px",
+        width : "160px",
         margin: "auto",
         borderRadius: '7px',
         border: 'none',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+       
     }
     const wrapperStyle = {
         display: "flex",
@@ -27,25 +28,29 @@ const Contents = (props) => {
     const pStyle = {
         textAlign: "center",
         marginTop: '-10px',
-        marginBottom: '10px'
+        marginBottom: '10px',
+        ':hover': {
+            opacity: '.5'
+        }
     }
 
     const media = props.media.filter((item)=>{
         return item.category === props.current
     })
 
-    const htmlArray = media.map(obj => {
+    const htmlArray = media.map((obj, index) => {
         return (
             <div style={wrapperStyle}
                 className = "grower"
                 onClick = {props.setBigPreviewSource}
+                key={index}
             >
-                <h2 style={{fontSize: '16px', textAlign: 'center'}}>{obj.title}</h2>
-                <p style={pStyle}>{obj.year}</p>
+                <h2 style={{fontSize: '18px', textAlign: 'center'}}>{obj.title}</h2>
+                <p key={index} style={pStyle}>{obj.year}</p>
                 {props.current !== 'video' ?
                 <img 
                     style = {imgStyle}
-                    src={obj.url}
+                    src={obj.image.src}
                     alt = {obj.description}
                     >
                 </img>
@@ -67,5 +72,4 @@ const Contents = (props) => {
         </div>
     )
 }
-
-export default Contents;
+export default Radium(Contents);
