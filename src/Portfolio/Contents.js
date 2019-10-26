@@ -7,13 +7,20 @@ const Contents = (props) => {
         flexWrap: 'wrap',
         width: "100%",
         margin: "0px 20px", 
+        justifyContent: 'space-around'
     }
     const imgStyle = {
-        width : "160px",
+        width : "185px",
         margin: "auto",
         borderRadius: '7px',
         border: 'none',
         pointerEvents: 'none',
+        '@media(max-width:500px)' : {
+            width: '150px'
+        },
+        '@media(max-width:350px)' : {
+            width: '120px'
+        }
        
     }
     const wrapperStyle = {
@@ -21,7 +28,7 @@ const Contents = (props) => {
         flexDirection: "column",
         alignItems: "center",
         margin : "25px",
-        width: "200px",
+        maxWidth: "200px",
         cursor: 'pointer',
     }
 
@@ -64,6 +71,7 @@ const Contents = (props) => {
             </div>
         )
     })
+
     return(
         <div>
             <div style = {rowStyle}>

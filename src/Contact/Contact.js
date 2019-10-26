@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import mailbox_pre from '../graphics/mailbox_pre.png';
 import mailbox_post from '../graphics/mailbox_post.png';
-import match from '../audio/match.wav'
-
-
+import match from '../audio/match.wav';
+import styles from '../styles.js';
+import radium from 'radium';
+ 
 class Contact extends Component {
 
     state = {
@@ -12,45 +13,23 @@ class Contact extends Component {
         message: ''
     }
     formStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        width: "350px",
-        backgroundColor: 'white',
-        padding: '30px',
-        border: '1px solid grey',
-        borderRadius: '10px',
-        flexWrap: 'wrap',
+    width: '600px',
+    ...styles.flexColumn,
+    ...styles.textBlock,
+    margin: '0',
     }
-    inputStyle = {
-        marginBottom: "20px",
-        resize: "none",
-        fontSize: '16px',
-        maxWidth: "100%"
-    }
+
     imgStyle = {
         height: '350px',
-        display: 'flex'
     }
+
     rowStyle = {
-        display: 'flex',
-        justifyContent: "space-around",
-        marginTop: "50px",
-        maxWidth: '800px',
+        ...styles.flexRow,
         flexWrap: 'wrap',
-        margin: 'auto'
+        marginTop: '5%'
     }
-    pStyle = {
-        // margin: '1% 5% 50px 5%',
-        fontSize: '24px',
-        lineHeight: '1.5',
-        padding: '20px',
-        backgroundColor: 'rgba(255,255,255,.8)',
-        borderRadius: '20px',
-        border: '1px solid grey',
-        maxWidth: '800px',
-        margin: 'auto',
-        marginBottom: '35px'
-    }
+
+    buttonStyle = styles.button;
 
     submit = (e) => {
         e.preventDefault();
@@ -77,15 +56,15 @@ class Contact extends Component {
     render() {
         return (
             <div>
-                <p style={this.pStyle}>If you'd like to inquire about hiring me or purchasing a piece from the portfolio, or you just want to say hi, please use the form below. You can also connect with me on instagram: @gabe.makes.things
+                <p style={styles.textBlock}>If you'd like to inquire about hiring me or purchasing a piece from the portfolio, or you just want to say hi, please use the form below. You can also connect with me on instagram: @gabe.makes.things
                 </p>
 
                 <div style={this.rowStyle}>
                     <form style={this.formStyle}>
-                        <h1>Email Gabe</h1>
+                        <h1 style = {styles.sisterFont}>Email Gabe</h1>
                         <label for="name">Name</label>
                         <input
-                            style={this.inputStyle}
+                            style={styles.input}
                             name="name"
                             type="text"
                             onChange={(e) => { this.controlChanges("name", e) }}
@@ -94,7 +73,7 @@ class Contact extends Component {
                         </input>
                         <label for="email">Email</label>
                         <input
-                            style={this.inputStyle}
+                            style={styles.input}
                             type="email"
                             name="email"
                             onChange={(e) => { this.controlChanges("email", e) }}
@@ -104,7 +83,7 @@ class Contact extends Component {
                         </input>
                         <label for="message">Message</label>
                         <textarea
-                            style={this.inputStyle}
+                            style={styles.input}
                             name="message"
                             rows="4"
                             cols="50"
@@ -123,7 +102,7 @@ class Contact extends Component {
                                 }, 1500)
                             }}
                             type="submit"
-                            style = {{cursor: 'pointer', fontSize:'16px'}}
+                            style = {styles.button}
                         >
                             Submit
                         </button>
@@ -138,4 +117,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default radium(Contact);

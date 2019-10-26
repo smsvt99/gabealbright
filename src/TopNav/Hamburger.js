@@ -1,3 +1,4 @@
+import style from '../styles.js/index.js';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +9,9 @@ const Hamburger = (props) => {
         flexDirection: 'column'
     }
     const optionStyle = {
-        color: 'red'
+        // color: 'red',
+        ...style.growOnHover,
+        ...style.underlineOnHover 
     }
     return (
         <div>
@@ -16,7 +19,7 @@ const Hamburger = (props) => {
                 <Link to="/">
                     <p
                         style={optionStyle}
-                        className="option grower"
+                        // className="option grower"
                         id="home"
                     >Home
             </p>
@@ -25,7 +28,7 @@ const Hamburger = (props) => {
                 <Link to={props.target}>
                     <p
                         style={optionStyle}
-                        className="option grower"
+                        // className="option grower"
                     >{props.text}
                     </p>
                 </Link>
@@ -33,7 +36,7 @@ const Hamburger = (props) => {
                 <Link to='/about'>
                     <p
                         style={optionStyle}
-                        className="option grower"
+                        // className="option grower"
                     >About
             </p>
                 </Link>
@@ -41,7 +44,7 @@ const Hamburger = (props) => {
                 <Link to='/portfolio'>
                     <p
                         style={optionStyle}
-                        className="option grower"
+                        // className="option grower"
                     >Portfolio
             </p>
                 </Link>
@@ -49,7 +52,7 @@ const Hamburger = (props) => {
                 <Link to='/contact'>
                     <p
                         style={optionStyle}
-                        className="option grower"
+                        // className="option grower"
                     >Contact
             </p>
                 </Link>

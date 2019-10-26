@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium, {StyleRoot} from 'radium';
+import Radium, { StyleRoot } from 'radium';
 import './App.css';
 
 import Index from './Index/Index';
@@ -29,98 +29,97 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    document.getElementById('home').click();
     let items = await this.refreshContent();
   }
 
   refreshContent = () => {
     console.log('refresh')
     fetch('/pull')
-    .then(res => res.json())
+      .then(res => res.json())
 
-    .then(res => {
-// experiment
-      res.map(ouvre => {
-        ouvre.image = new Image(150, 150);
-        ouvre.image.src = ouvre.url;
+      .then(res => {
+        // experiment
+        res.map(ouvre => {
+          ouvre.image = new Image(150, 150);
+          ouvre.image.src = ouvre.url;
+        })
+        //  
+        this.setState({
+          media: res
+        })
       })
-//  
-this.setState({
-        media: res
+      .then(res => {
+        return new Promise((resolve, reject) => {
+          resolve("done")
+        });
       })
-    })
-    .then(res=>{
-      return new Promise((resolve, reject) => {
-        resolve("done")
-      });
-    })
   }
 
   render() {
     return (
       <StyleRoot>
-      <Router>
-        <div>
-          <TopNav
-            loggedIn={this.state.loggedIn}
-            backButtonStyle={this.backButtonStyle}
-          />
-          <Route
-            path = "/"
-            exact
-            render = {(props) => 
-              <Index
-              loggedIn={this.state.loggedIn}        
-            />}
-          />
+        <Router>
+          <div>
+            <TopNav
+              loggedIn={this.state.loggedIn}
+              backButtonStyle={this.backButtonStyle}
+            />
+            <Route
+              path="/"
+              exact
+              render={(props) =>
+                <Index
+                  loggedIn={this.state.loggedIn}
+                />}
+            />
 
-          <Route
-            path = "/about"
-            exact
-            render = {(props) => 
-              <About
-            />}
-          />
+            <Route
+              path="/about"
+              exact
+              render={(props) =>
+                <About
+                />}
+            />
 
-          <Route
-            path = "/portfolio"
-            exact
-            render = {(props) =>
-              <Portfolio
-              media={this.state.media}
-            />}
-          />
+            <Route
+              path="/portfolio"
+              exact
+              render={(props) =>
+                <Portfolio
+                  media={this.state.media}
+                />}
+            />
 
-          <Route
-            path="/contact"
-            exact
-            render = {(props)=>
-              <Contact
-              />}
+            <Route
+              path="/contact"
+              exact
+              render={(props) =>
+                <Contact
+                />}
             />
 
             <Route
               path="/Login"
               exact
-              render = {(props)=>
+              render={(props) =>
                 <Login
-                logIn={this.logIn}
-            />}
-          />
+                  logIn={this.logIn}
+                />}
+            />
 
-          <Route
-            path="/admin"
-            exact
-            render ={(props)=>
-              <Admin
-                loggedIn={this.state.loggedIn}
-                media={this.state.media}
-                refreshContent={this.refreshContent}
-              />}
-          />
-        </div>
-        <Footer/>
-      </Router>
+            <Route
+              path="/admin"
+              exact
+              render={(props) =>
+                <Admin
+                  loggedIn={this.state.loggedIn}
+                  media={this.state.media}
+                  refreshContent={this.refreshContent}
+                />}
+            />
+          </div>
+          <Footer />
+        </Router>
       </StyleRoot>
     )
   }

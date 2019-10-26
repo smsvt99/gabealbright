@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Upload from './Upload';
 import Edit from './Edit';
 import { Redirect } from 'react-router-dom';
+import styles from '../styles.js';
+import radium from 'radium';
 
 class Admin extends Component {
     state = {
@@ -20,6 +22,14 @@ class Admin extends Component {
         justifyContent: 'space-between',
         margin: 'auto'
     }
+    selected = {
+        ...styles.underlineOnHover,
+        textDecoration: 'underline'
+    }
+    notSelected = {
+        ...styles.underlineOnHover,
+        textDecoration: 'none'
+    }
 
     adminHeader = (view) => {
         return (<div>
@@ -27,15 +37,13 @@ class Admin extends Component {
             <div style={this.rowStyle}>
                 <p
                     className="option"
-                    style={view === 'upload' ? { textDecoration: 'underline' }
-                        : { textDecoration: 'none' }}
+                    style={view === 'upload' ? this.selected : this.notSelected}
                     onClick={() => { this.setView('upload') }}>
                     Upload Content
                             </p>
                 <p
                     className="option"
-                    style={view === 'edit' ? { textDecoration: 'underline' }
-                        : { textDecoration: 'none' }}
+                    style={view === 'edit' ? this.selected : this.notSelected}
                     onClick={() => { this.setView('edit') }}>
                     Edit Content
                             </p>
@@ -66,4 +74,4 @@ class Admin extends Component {
 
 }
 
-export default Admin;
+export default radium(Admin);

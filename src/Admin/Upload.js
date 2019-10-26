@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import styles from '../styles.js';
+import radium from 'radium';
 
 class Upload extends Component{
 
@@ -12,10 +14,8 @@ class Upload extends Component{
     }
 
     columnStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        margin: 'auto',
-        width: '400px'
+        ...styles.textBlock,
+        ...styles.flexColumn,
     }
 
     controlChange = (e, field) =>{
@@ -53,15 +53,19 @@ class Upload extends Component{
                     src={this.state.url}
                 >
                 </img>
-                <p>URL</p>
+                <label for="url">URL</label>
                 <input
+                    name="url"
                     type="text"
                     value={this.state.url}
                     onChange={(e)=>this.controlChange(e,'url')}
+                    style={styles.input}
                     >      
                 </input>
-                <p>Category</p>
+                <label for="category">Category</label>
                 <select
+                    name="category"
+                    style={styles.input}
                     value={this.state.category}
                     onChange={(e)=>this.controlChange(e,'category')}
                 >
@@ -72,23 +76,27 @@ class Upload extends Component{
                     <option value='video'>Video</option>
                     <option value='other'>Other</option>
                 </select>
-                <p>Title</p>
+                <label for="Title">Title</label>
                 <input 
+                    style={styles.input}
                     type="text" 
                     name="Title"
                     value={this.state.title}
                     onChange={(e)=>this.controlChange(e,'title')}>
                 </input>
-                <p>Year</p>
+                <label for="year">Year</label>
                 <input
+                    name="year"
+                    style={styles.input}
                     type = "number"
                     value={this.state.year}
                     onChange={(e)=>this.controlChange(e,'year')}
                     >              
                 </input>
-                <p>Description</p>
+                <label>Description</label>
                 <textarea 
-                    style = {{width: '400px', height: '200px'}}
+                    name="description"
+                    style={styles.input}
                     value={this.state.description}
                     onChange={(e)=>this.controlChange(e,'description')}
                     >
@@ -96,7 +104,7 @@ class Upload extends Component{
                 <p style={{color:'red'}}>{this.state.serverDialogue}</p>
                 <button 
                     onClick = {this.submit}
-                    style = {{marginBottom: '50px', borderColor: 'black', color: 'white', backgroundColor: 'black', cursor: 'pointer'}}
+                    style = {styles.button}
                     >Upload!</button>
             </div>
             )

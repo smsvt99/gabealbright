@@ -6,7 +6,6 @@ const SideBar = (props) => {
     const columnStyle = {
         display: "flex",
         flexDirection: "column",
-        // maxWidth: '20%',
         maxWidth: '150px',
         position: 'sticky',
         top: '40px',
@@ -28,7 +27,13 @@ const SideBar = (props) => {
         cursor: "pointer",
         borderBottom: '1px solid grey',
         fontSize: '25px',
-        margin: '10px'
+        margin: '10px',
+        '@media(max-width: 400px)' : {
+            fontSize: '20px'
+        },
+        '@media(max-width:350px)' : {
+            fontSize: '16px'
+        },
     };
 
     const categories = ["Painting", "Illustration", "Carpentry", "Sculpture", "Photography", "Video", "Other"];

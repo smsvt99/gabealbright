@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import radium from 'radium';
+import styles from '../styles.js';
 
 class Login extends Component {
     state = {
@@ -8,11 +10,10 @@ class Login extends Component {
         serverDialogue: '',
         redirect: false
     }
-    wrapperStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        width: "300px",
-        margin: 'auto',
+    formStyle = {
+        ...styles.textBlock,
+        ...styles.flexColumn,
+        maxWidth: '400px',
     }
     controlChanges = (e, field) => {
         this.setState({
@@ -66,33 +67,36 @@ class Login extends Component {
             return <Redirect to="/admin" />
         } else {
             return (
-                <div style={{textAlign: 'center'}}>
-                    <div style={{background: 'white', border: '1px solid grey', display: 'inline-block', padding: '25px', margin: '25px', borderRadius: '10px'}}>
+                    <div style={this.formStyle}>
                         <h1>Welcome</h1>
-                        <div style={this.wrapperStyle}>
                             {this.redirector}
                             <p style={{ color: 'red' }}>{this.state.serverDialogue}</p>
-                            <p>Username</p>
+                            <label for="username">Username</label>
                             <input
+                                name="username"
+                                style={styles.input}
                                 value={this.state.username}
                                 onChange={(e) => { this.controlChanges(e, 'username') }}
                                 name="username"
                                 type="text">
                             </input>
 
-                            <p>Password</p>
+                            <label for="password">Password</label>
                             <input
+                                name="password"
+                                style={styles.input}
                                 value={this.state.password}
                                 onChange={(e) => { this.controlChanges(e, 'password') }}
                                 name="password"
                                 type="password"></input>
-                            <p><button onClick={this.submit}>Login</button></p>
-                        </div>
+                            <button 
+                                onClick={this.submit}
+                                style={styles.button}
+                                >Login</button>
                     </div>
-                </div>
             )
         }
     }
 }
 
-export default Login;
+export default radium(Login);
