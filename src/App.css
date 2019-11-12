@@ -25,22 +25,8 @@ h1{
   text-align: center;
 }
 
-/* .option{
-  cursor: pointer;
-}
-.option:hover{
-  text-decoration: underline;
-} */
-/* .grower{
-  transition: all .2s;
-}
-.grower:hover{
-  transform: scale(1.1); 
-} */
 .red{
   color: orange;
-  /* text-shadow: 1px 1px orange; */
-  /* transform: scale(1.1); */
 }
 
 a{
